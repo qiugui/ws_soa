@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://service.qiugui.edu.cn" 
+		xmlns:tns="http://service.qiugui.edu.cn" 
+		elementFormDefault="qualified">
+		
+	<xsd:element name="add" type="tns:add" />
+	<xsd:element name="addResponse" type="tns:addResponse" />
+	<xsd:element name="delete" type="tns:delete" />
+	<xsd:element name="deleteResponse" type="tns:deleteResponse" />
+	<xsd:element name="list" type="tns:list" />
+	<xsd:element name="listResponse" type="tns:listResponse" />
+	<xsd:element name="login" type="tns:login" />
+	<xsd:element name="loginResponse" type="tns:loginResponse" />
+	<xsd:element name="UserException" type="tns:UserException" />
+	
+	<xsd:complexType name="UserException">
+		<xsd:sequence>
+			<xsd:element name="message" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="add">
+		<xsd:sequence>
+			<xsd:element name="user" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="addResponse">
+		<xsd:sequence/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="delete">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="deleteResponse">
+		<xsd:sequence/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="list">
+		<xsd:sequence/>
+	</xsd:complexType>
+	<xsd:complexType name="listResponse">
+		<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="user" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="login">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string" />
+			<xsd:element name="password" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="loginResponse">
+		<xsd:sequence>
+			<xsd:element name="user" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="user">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string" />
+			<xsd:element name="password" type="xsd:string" />
+			<xsd:element name="nickname" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+			
+</xsd:schema>
