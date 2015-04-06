@@ -7,6 +7,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -20,7 +21,7 @@ import org.qiugui.vo.User;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "IUserService", targetNamespace = "http://service.qiugui.edu.cn")
+@WebService(name = "IUserService", targetNamespace = "http://service.qiugui.edu.cn/")
 public interface IUserService {
 
 
@@ -30,8 +31,8 @@ public interface IUserService {
      * @throws UserException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "add", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.Add")
-    @ResponseWrapper(localName = "addResponse", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.AddResponse")
+    @RequestWrapper(localName = "add", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.Add")
+    @ResponseWrapper(localName = "addResponse", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.AddResponse")
     public void add(
         @WebParam(name = "user", targetNamespace = "")
         User user)
@@ -43,8 +44,8 @@ public interface IUserService {
      * @param username
      */
     @WebMethod
-    @RequestWrapper(localName = "delete", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.Delete")
-    @ResponseWrapper(localName = "deleteResponse", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.DeleteResponse")
+    @RequestWrapper(localName = "delete", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.Delete")
+    @ResponseWrapper(localName = "deleteResponse", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.DeleteResponse")
     public void delete(
         @WebParam(name = "username", targetNamespace = "")
         String username);
@@ -56,8 +57,8 @@ public interface IUserService {
      */
     @WebMethod
     @WebResult(name = "user", targetNamespace = "")
-    @RequestWrapper(localName = "list", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.List")
-    @ResponseWrapper(localName = "listResponse", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.ListResponse")
+    @RequestWrapper(localName = "list", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.List")
+    @ResponseWrapper(localName = "listResponse", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.ListResponse")
     public List<User> list();
 
     /**
@@ -70,8 +71,8 @@ public interface IUserService {
      */
     @WebMethod
     @WebResult(name = "user", targetNamespace = "")
-    @RequestWrapper(localName = "login", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.Login")
-    @ResponseWrapper(localName = "loginResponse", targetNamespace = "http://service.qiugui.edu.cn", className = "cn.edu.qiugui.service.LoginResponse")
+    @RequestWrapper(localName = "login", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.Login")
+    @ResponseWrapper(localName = "loginResponse", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.LoginResponse")
     public User login(
         @WebParam(name = "username", targetNamespace = "")
         String username,

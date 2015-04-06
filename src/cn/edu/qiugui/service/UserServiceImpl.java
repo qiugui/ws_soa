@@ -11,7 +11,7 @@ import org.qiugui.vo.User;
 @WebService(endpointInterface="cn.edu.qiugui.service.IUserService",
 		serviceName="UserService",
 		portName="UserServicePort",
-		targetNamespace="http://service.qiugui.edu.cn",
+		targetNamespace="http://service.qiugui.edu.cn/",
 		wsdlLocation="WEB-INF/wsdl/user.wsdl")
  public class UserServiceImpl implements IUserService {
 

@@ -24,6 +24,7 @@ import org.qiugui.vo.User;
 	 }
 	 
 	 public void add(User user) throws UserException{
+		 if (user == null) throw new UserException("传入的User对象为空！");
 		 if (users.containsKey(user.getUsername())) throw new UserException("用户已存在！");
 		 users.put(user.getUsername(), user);
 	 }

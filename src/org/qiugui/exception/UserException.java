@@ -1,6 +1,8 @@
  package org.qiugui.exception;
- @SuppressWarnings("serial")
+
 public class UserException extends Exception {
+	
+	private static final long serialVersionUID = 1L;
 
 	public UserException() {
 		super();

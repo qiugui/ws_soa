@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-		xmlns:tns="http://service.qiugui.edu.cn" 
+		xmlns:tns="http://service.qiugui.edu.cn/" 
 		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
 		xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 		name="UserService" 
-		targetNamespace="http://service.qiugui.edu.cn">
+		targetNamespace="http://service.qiugui.edu.cn/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://service.qiugui.edu.cn">
+    <xsd:schema targetNamespace="http://service.qiugui.edu.cn/">
 		<xsd:include schemaLocation="user.xsd" />
-		<!-- 没有命名空间，就可以用 xsd:import 的方式 -->
-    </xsd:schema>
+    </xsd:schema> 
   </wsdl:types>
   
   <wsdl:message name="add">
