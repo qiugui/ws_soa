@@ -19,11 +19,18 @@ import org.qiugui.vo.User;
 	 
 	@Override
 	public void add(User user) throws UserException {
+		checkRegister();
 		userDao.add(user);
+	}
+
+	private void checkRegister() {
+		// 获取消息头中的信息，并且进行相应的判断
+		 
 	}
 
 	@Override
 	public void delete(String username) {
+		checkRegister();
 		userDao.delete(username);
 	}
 

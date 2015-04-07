@@ -7,9 +7,82 @@
 		targetNamespace="http://service.qiugui.edu.cn/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://service.qiugui.edu.cn/">
-		<xsd:include schemaLocation="user.xsd" />
+			<xsd:element name="add" type="tns:add" />
+	<xsd:element name="addResponse" type="tns:addResponse" />
+	<xsd:element name="delete" type="tns:delete" />
+	<xsd:element name="deleteResponse" type="tns:deleteResponse" />
+	<xsd:element name="list" type="tns:list" />
+	<xsd:element name="listResponse" type="tns:listResponse" />
+	<xsd:element name="login" type="tns:login" />
+	<xsd:element name="loginResponse" type="tns:loginResponse" />
+	<xsd:element name="UserException" type="tns:UserException" />
+	<xsd:element name="licenseInfo" type="tns:licenseInfo" />
+	
+	
+	<xsd:complexType name="licenseInfo">
+		<xsd:sequence>
+			<xsd:element name="registerUser" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="UserException">
+		<xsd:sequence>
+			<xsd:element name="message" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="add">
+		<xsd:sequence>
+			<xsd:element name="user" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="addResponse">
+		<xsd:sequence/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="delete">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="deleteResponse">
+		<xsd:sequence/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="list">
+		<xsd:sequence/>
+	</xsd:complexType>
+	<xsd:complexType name="listResponse">
+		<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="user" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="login">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string" />
+			<xsd:element name="password" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="loginResponse">
+		<xsd:sequence>
+			<xsd:element name="user" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="user">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string" />
+			<xsd:element name="password" type="xsd:string" />
+			<xsd:element name="nickname" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
     </xsd:schema> 
   </wsdl:types>
+  
+  <wsdl:message name="licenseInfo">
+  	<wsdl:part name="licenseInfo" element="tns:licenseInfo" />
+  </wsdl:message>
   
   <wsdl:message name="add">
   	<wsdl:part element="tns:add" name="parameters" />
@@ -72,6 +145,7 @@
     <wsdl:operation name="add">
       <wsdl:input>
         <soap:body use="literal"/>
+        <soap:header use="literal" part="licenseInfo" message="tns:licenseInfo" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal"/>
@@ -84,6 +158,7 @@
     <wsdl:operation name="delete">
       <wsdl:input>
         <soap:body use="literal"/>
+        <soap:header use="literal" part="licenseInfo" message="tns:licenseInfo" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal"/>

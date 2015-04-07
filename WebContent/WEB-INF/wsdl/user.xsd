@@ -13,6 +13,14 @@
 	<xsd:element name="login" type="tns:login" />
 	<xsd:element name="loginResponse" type="tns:loginResponse" />
 	<xsd:element name="UserException" type="tns:UserException" />
+	<xsd:element name="licenseInfo" type="tns:licenseInfo" />
+	
+	
+	<xsd:complexType name="licenseInfo">
+		<xsd:sequence>
+			<xsd:element name="registerUser" type="tns:user" />
+		</xsd:sequence>
+	</xsd:complexType>
 	
 	<xsd:complexType name="UserException">
 		<xsd:sequence>
