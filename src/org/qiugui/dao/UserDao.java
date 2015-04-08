@@ -33,6 +33,14 @@ import org.qiugui.vo.User;
 		 users.remove(username);
 	 }
 	 
+	 public Set<String> listUsers(){
+		 return users.keySet();
+	 }
+	 
+	 public User loadByUsername(String userName){
+		 return users.get(userName);
+	 }
+	 
 	 public List<User> list(){
 		 Set<String> keys = users.keySet();
 		 List<User> list = new ArrayList<User>();

@@ -7,7 +7,6 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -42,13 +41,16 @@ public interface IUserService {
     /**
      * 
      * @param username
+     * @throws UserException_Exception
      */
     @WebMethod
     @RequestWrapper(localName = "delete", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.Delete")
     @ResponseWrapper(localName = "deleteResponse", targetNamespace = "http://service.qiugui.edu.cn/", className = "cn.edu.qiugui.service.DeleteResponse")
     public void delete(
         @WebParam(name = "username", targetNamespace = "")
-        String username);
+        String username)
+        throws UserException
+    ;
 
     /**
      * 
